@@ -10,8 +10,12 @@ export const Home = () => {
     useEffect(() => {
         console.log(131331,search)
         if(!search) return
-        console.log(4444,searchName(search.toLowerCase()))
+        setSearchResult(searchName(search.toLowerCase()).promiseResult)
       }, [search]);
+
+      useEffect(() => {
+console.log(121212,searchResult)
+      }, [searchResult]);
     
     return(<St.Container><NavBar state={search} onChange={setSearch}/></St.Container>)
 
